@@ -5,12 +5,20 @@
 
 // container.appendChild(element);
 
-import React from 'react';
-import ReactDOM from 'react-dom';
+import React from "react";
+import ReactDOM from "react-dom";
+import "bootstrap/dist/css/bootstrap.css";
 
-const element = <h1>Hello, Platzi Badges!</h1>;
+import "./global.css";
+import Badge from "./components/Bagde";
+// const jsx = (
+//     <div>
+//         <h1> Hola, soy Cesar </h1>
+//         <p> Soy Ingeniero FrontEnd </p>
+//     </div>
+// );
 
-const container = document.getElementById('app');
+const container = document.getElementById("app");
 
 // ReactDOM.render(__qué__, __dónde__);
-ReactDOM.render(element, container);
+ReactDOM.render(<Badge />, container);
