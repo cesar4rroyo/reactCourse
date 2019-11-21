@@ -8,6 +8,26 @@ import avatarImg from "../images/link1.jpg";
 import BadgeForm from "../components/BadgeForm.js";
 
 class BadgeNew extends React.Component {
+    state = {
+        form: {
+            firstName: "",
+            lastName: "",
+            email: "",
+            jobTitle: "",
+            twitter: ""
+        }
+    };
+    handleChange = e => {
+        // const nextForm = this.state.form;
+        // nextForm[e.target.name] = e.target.value;
+        this.setState({
+            form: {
+                ...this.state.form,
+                [e.target.name]: e.target.value
+            }
+        });
+    };
+
     render() {
         return (
             <div>
@@ -17,17 +37,21 @@ class BadgeNew extends React.Component {
                 </div>
                 <div className="container">
                     <div className="row">
-                        <div className="col">
+                        <div className="col-6">
                             <Badge
-                                firstName="Cesar"
-                                lastName="Arroyo"
-                                twitter="cesar4rroyo"
-                                jobTitle="Frontend Engineer"
+                                firstName={this.state.form.firstName}
+                                lastName={this.state.form.lastName}
+                                twitter={this.state.form.twitter}
+                                jobTitle={this.state.form.jobTitle}
+                                email={this.state.form.email}
                                 avatarUrl={avatarImg}
                             />
                         </div>
-                        <div className="col">
-                            <BadgeForm />
+                        <div className="col-6">
+                            <BadgeForm
+                                onChange={this.handleChange}
+                                formValues={this.state.form}
+                            />
                         </div>
                     </div>
                 </div>

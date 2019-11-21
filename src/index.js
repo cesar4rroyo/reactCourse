@@ -11,6 +11,7 @@ import "bootstrap/dist/css/bootstrap.css";
 
 import "./global.css";
 import BadgeNew from "./pages/BadgeNew";
+import Badges from "./pages/Badges";
 // const jsx = (
 //     <div>
 //         <h1> Hola, soy Cesar </h1>
@@ -21,12 +22,4 @@ import BadgeNew from "./pages/BadgeNew";
 const container = document.getElementById("app");
 
 // ReactDOM.render(__qué__, __dónde__);
-ReactDOM.render(<BadgeNew />, container);
-// <Badge
-//     firstName="Cesar"
-//     lastName="Arroyo"
-//     jobTitle="Frontend Engineer"
-//     twitter="cesar4rroyo"
-//     avatarUrl="https://es.gravatar.com/cesar4rroyo"
-// />,
-// container
+ReactDOM.render(<Badges />, container);
