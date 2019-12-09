@@ -2,7 +2,7 @@ import React from "react";
 
 import "../styles/BadgeNew.css";
 
-import header from "../images/badge-header.svg";
+import header from "../images/platziconf-logo.svg";
 import Badge from "../components/Bagde";
 import avatarImg from "../images/link1.jpg";
 import BadgeForm from "../components/BadgeForm.js";
@@ -32,7 +32,11 @@ class BadgeNew extends React.Component {
         return (
             <React.Fragment>
                 <div className="BadgeNew__hero">
-                    <img className="img-fluid" src={header} alt="Logo" />
+                    <img
+                        className="BadgeNew__hero-image img-fluid"
+                        src={header}
+                        alt="Logo"
+                    />
                 </div>
                 <div className="container">
                     <div className="row">

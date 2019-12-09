@@ -1,5 +1,5 @@
 import React from "react";
-
+import { Link } from "react-router-dom";
 import "../styles/badgesList.css";
 import twitterImg from "../images/twitter.svg";
 
@@ -34,6 +34,14 @@ class BadgesListItem extends React.Component {
 
 class BadgesList extends React.Component {
     render() {
+        if (this.props.badges.length == 0) {
+            return (
+                <div>
+                    <h3>No Badge were found</h3>
+                    <Link className="btn btn-primary">Create New</Link>
+                </div>
+            );
+        }
         return (
             <div className="BadgesList">
                 <ul className="list-unstyled">
