@@ -2,14 +2,15 @@ import React from "react";
 import { Link } from "react-router-dom";
 import "../styles/badgesList.css";
 import twitterImg from "../images/twitter.svg";
+import Gravatar from "./Gravatar";
 
 class BadgesListItem extends React.Component {
     render() {
         return (
             <div className="BadgesListItem">
-                <img
+                <Gravatar
                     className="BadgesListItem__avatar"
-                    src={this.props.badge.avatarUrl}
+                    email={this.props.badge.email}
                     alt={`${this.props.badge.firstName} ${this.props.badge.lastName}`}
                 />
 
@@ -48,7 +49,12 @@ class BadgesList extends React.Component {
                     {this.props.badges.map(badge => {
                         return (
                             <li key={badge.id}>
-                                <BadgesListItem badge={badge} />
+                                <Link
+                                    className="text-reset text-decoration-none"
+                                    to={`/badges/${badge.id}/edit`}
+                                >
+                                    <BadgesListItem badge={badge} />
+                                </Link>
                             </li>
                         );
                     })}

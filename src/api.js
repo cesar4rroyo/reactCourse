@@ -28,6 +28,7 @@ const api = {
             return callApi("/badges");
         },
         create(badge) {
+            // throw new Error("500: Sever Error");
             return callApi(`/badges`, {
                 method: "POST",
                 body: JSON.stringify(badge)
